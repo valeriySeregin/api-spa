@@ -19,4 +19,6 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('news', [NewsController::class, 'index'])->name('news.index');
 
+Route::get('search', [NewsController::class, 'search'])->name('search');
+
 Route::get('news/{id}', [NewsController::class, 'show'])->name('news.show');

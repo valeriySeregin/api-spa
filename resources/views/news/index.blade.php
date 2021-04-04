@@ -5,6 +5,10 @@
 @section('header', 'Список новостей')
 
 @section('content')
+    @include('searchForm')
+
+    @include('modal.newsFilters')
+
     <div class="container">
         <table class="table table-primary table-bordered">
         <thead>

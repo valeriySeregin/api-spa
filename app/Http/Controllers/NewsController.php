@@ -13,7 +13,7 @@ class NewsController extends Controller
     {
         $news = DB::table('news')
             ->leftJoin('users', 'users.id', '=', 'news.user_id')
-            ->paginate(12);
+            ->paginate(10);
 
         return view('news.index', compact('news'));
     }
@@ -31,5 +31,16 @@ class NewsController extends Controller
             ->count;
 
         return view('news.show', compact('singleNewsItem', 'user', 'userNewsCount'));
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+
+        $news = News::query()
+            ->where('title', 'LIKE', "%{$search}%")
+            ->paginate(10);
+
+        return view('news.search', compact('news'));
     }
 }
