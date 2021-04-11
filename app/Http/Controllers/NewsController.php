@@ -43,4 +43,15 @@ class NewsController extends Controller
 
         return view('news.search', compact('news'));
     }
+
+    public function newsByDates(Request $request)
+    {
+        $news = DB::table('news')
+            ->leftJoin('users', 'users.id', '=', 'news.user_id')
+            ->whereBetween('creation_date', [$request->get('begin_date'), $request->get('end_date')])
+            ->where('name', $request->get('author'))
+            ->paginate(10);
+
+        return view('news.index', compact('news'));
+    }
 }

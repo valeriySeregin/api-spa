@@ -21,4 +21,6 @@ Route::get('news', [NewsController::class, 'index'])->name('news.index');
 
 Route::get('search', [NewsController::class, 'search'])->name('search');
 
+Route::get('newsByDates', [NewsController::class, 'newsByDates'])->name('newsByDates');
+
 Route::get('news/{id}', [NewsController::class, 'show'])->name('news.show');
