@@ -25,6 +25,10 @@ class NewsFactory extends Factory
             'title' => $this->faker->text(10),
             'short_description' => $this->faker->text(30),
             'body' =>$this->faker->text(300),
+            'creation_date' => \Carbon\Carbon::now()
+                ->addDays(rand(0, 30))
+                ->addMinutes(rand(0, 60 * 23))
+                ->addSeconds(rand(0, 60))
         ];
     }
 }
