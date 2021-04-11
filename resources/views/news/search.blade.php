@@ -26,7 +26,7 @@
                             <th>
                                 <a class="nav-link" href="{{ route('news.show', $item->id) }}">{{ $item->title }}</a>
                             </th>
-                            <td>{{ $item->created_at }}</td>
+                            <td>{{ $item->creation_date }}</td>
                             <td>{{ $item->name }}</td>
                             <td>{{ $item->short_description }}</td>
                         </tr>

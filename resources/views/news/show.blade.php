@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    <h3>{{ $singleNewsItem->created_at }}</h3>
+    <h3>{{ $singleNewsItem->creation_date }}</h3>
     <p>{{ $singleNewsItem->body }}</p>
     <br>
     <h1>Об авторе</h1>
@@ -23,7 +23,7 @@
         </thead>
         <tbody>
             <tr>
-                <td>{{ $user->name}}</td>
+                <td>{{ $user->name }}</td>
                 <td>{{ $user->rating }}</td>
                 <td>{{ $userNewsCount }}</td>
             </tr>
